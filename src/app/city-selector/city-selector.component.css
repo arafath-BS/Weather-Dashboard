@@ -1,0 +1,85 @@
+.card-header {
+    
+    background-color: #5AC1D0;
+    color: rgb(255, 255, 255);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+}
+
+.card-header h2 {
+    font-weight: bolder;
+    margin: 0;
+    font-size: 24px;
+}
+
+#city-name:hover{
+    scale: 1.05;
+}
+
+.btnn{
+    padding: 10px 20px;
+    /* background-color: aquamarine; */
+    color: white;
+    font-size: 20px;
+    /* text-decoration: none; */
+}
+.btnn:hover{
+    transform: scale(2);
+    
+}
+
+.dropdown-menu {
+    margin-left: -60px;
+}
+.dropdown-menu li  a {
+
+    text-align: center;
+    padding: 15px 25px;
+}
+
+.dropdown-menu li  a:hover{
+   color: #5AC1D0;
+}
+#dropdown-btn {
+    padding: 10px;
+    background-color: #3c6b3e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdownSearchList{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input{
+    color: black;
+    border: 1px solid #5AC1D0;
+    border-radius: 5px;
+    padding: 5px;
+}

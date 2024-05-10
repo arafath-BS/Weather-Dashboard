@@ -1,0 +1,104 @@
+[
+    {
+        "id":"1",
+        "name":"DHAKA",
+        "weatherinfo":{
+
+            "temperature":30,
+            "condition":"sunny"
+        }
+    },
+
+
+    {
+        "id":"2",
+        "name":"BORISAL",
+        "weatherinfo":{
+            
+            "temperature":24,
+            "condition":"cloudy"
+        }
+    },
+
+    {
+        "id":"3",
+        "name":"KHULNA",
+        "weatherinfo":{
+            
+            "temperature":18,
+            "condition":"rainny"
+        }
+    },
+
+    {
+        "id":"4",
+        "name":"RONGPUR",
+        "weatherinfo":{
+            
+            "temperature":8,
+            "condition":"thunderstorm"
+        }
+    },
+
+    {
+        "id":"5",
+        "name":"DINAJPUR",
+        "weatherinfo":{
+            
+            "temperature":4,
+            "condition":"foggy"
+        }
+    }
+    ,
+
+    {
+        "id":"6",
+        "name":"NARAYANGANJ",
+        "weatherinfo":{
+
+            "temperature":30,
+            "condition":"sunny"
+        }
+    },
+
+
+    {
+        "id":"7",
+        "name":"RAJSAHI",
+        "weatherinfo":{
+            
+            "temperature":24,
+            "condition":"cloudy"
+        }
+    },
+
+    {
+        "id":"8",
+        "name":"MYMESING",
+        "weatherinfo":{
+            
+            "temperature":18,
+            "condition":"rainny"
+        }
+    },
+
+    {
+        "id":"9",
+        "name":"CHATTOGRAM",
+        "weatherinfo":{
+            
+            "temperature":8,
+            "condition":"thunderstorm"
+        }
+    },
+
+    {
+        "id":"10",
+        "name":"FENI",
+        "weatherinfo":{
+            
+            "temperature":4,
+            "condition":"foggy"
+        }
+    }
+]

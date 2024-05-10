@@ -1,0 +1,98 @@
+
+.card-body {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/Free-Download-Weather-Wallpaper.jpg');
+    padding: 20px;
+    height: 600px;
+    background-size: cover;
+    text-align: left;
+    padding: 50px 50px;
+    font-size: 25px;
+    
+}
+
+.sunny{
+    background-image: url('https://i0.wp.com/picjumbo.com/wp-content/uploads/sunny-weather-summer-free-photo.jpg?w=2210&quality=70');
+}
+
+.cloudy{
+    color: rgb(11, 10, 10);
+    font-weight: 500;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/042/379/531/small_2x/ai-generated-blue-sky-with-bright-sun-as-abstract-panoramic-background-ai-generated-image-photo.jpg');
+}
+
+.rainny{
+    /* color: white; */
+    font-weight: 500;
+    background-image: url('https://img.freepik.com/free-photo/young-child-enjoying-childhood-happiness-by-playing-puddle-water-after-rain_23-2151470011.jpg?size=626&ext=jpg&ga=GA1.1.1631966810.1699380291&semt=ais');
+}
+
+.thunder{
+    /* color: rgb(189, 181, 181); */
+font-weight: 500;
+  background-image: url('https://e3.365dm.com/20/06/1600x900/skynews-lightning-thunder_5022994.jpg?20200626050250');
+}
+
+.foggy{
+    background-image: url('https://th.bing.com/th/id/R.3e445966b3441697478747bfb35a19e1?rik=wautf4%2fFjTwC9g&pid=ImgRaw&r=0');
+color: Black;
+font-weight: 500;
+}
+
+
+.weather-info p {
+    margin: 20px 0;
+    
+    
+}
+
+#weather-icon {
+    width: 150px;
+    height: 150px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.ng-template{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 40px;
+    color: #fafcfc;
+    font-weight: 1000;
+    text-shadow: 1px 1px 2px pink;
+}
+
+
+.ng-template:hover{
+    scale: 1.05;
+}
+
+#weather-icon{
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.card-show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 300px;
+    background-color: #F0FFFF;
+    border-radius: 20px;
+    opacity: 0.7;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    font-size: 20px;
+    padding: 30PX;
+   
+}
+
+#temperature{
+    font-size: 100px;
+    font-weight: bold;
+}
+
+#degree{
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+

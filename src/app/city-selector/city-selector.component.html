@@ -1,0 +1,35 @@
+<div class="card-header">
+    <h2 id="city-name" *ngIf="name;else second">{{name}}</h2>
+    <ng-template #second>
+
+        <h2 id="city-name">Weather Dashboard</h2>
+    </ng-template >
+    
+
+    <div class="dropdown"  [ngClass]="{'open': isOpen}">
+      <a (click)="get()" class="btnn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select City <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li class="dropdownSearchList"><input type="text" placeholder="Search City here" #searchData [(ngModel)]="searchQuery" (input)="filterCities()"></li>
+        <br>
+
+        
+            <li *ngIf="filteredCities.length==0 ; else filter"><a class="dropdown-item" href="#" *ngFor="let ct of cityss" (click)="selectedWeather(ct)">{{ct.name}}</a></li>
+        
+
+        <ng-template #filter>
+        <li *ngFor="let city of filteredCities" (click)="selectedWeather(city)">
+            <a class="dropdown-item" href="#" >{{city.name}}</a>
+        </li>
+    </ng-template>
+          <!-- <li><a class="dropdown-item" href="#" *ngFor="let ct of cityss" (click)="selectedWeather(ct)">{{ct.name}}</a></li> -->
+
+
+
+          
+      </ul>
+  
+
+</div>
+
