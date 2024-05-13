@@ -9,6 +9,7 @@ import { CityInfo } from '../city.model';
 })
 export class CitySelectorComponent implements OnInit{
 
+  flag=true;
   searchQuery:string ='';
 
   filteredCities = [];
@@ -55,11 +56,17 @@ export class CitySelectorComponent implements OnInit{
     this.weatherService.Citys.emit(ct);
   }
 
+  
+
 
   // for searching 
 
   filterCities() {
-    this.filteredCities = this.cityss.filter(city => city.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+
+    this.flag=false;
+    this.filteredCities = this.cityss.filter(city => city.name.toLowerCase().startsWith(this.searchQuery.toLowerCase()));
+  
+  
   }
   
 

@@ -1,5 +1,12 @@
-<div class="card-body" *ngIf="rcvCity==undefined ;else elsee">
+<div class="card-body2" *ngIf="rcvCity==undefined ;else elsee">
     <h1 class="ng-template" >Welcome To the weather app <br> Select a city to get the Weather update </h1>
+    <div class="fotter">
+        <img  [src]="iconArray.sunny" alt="Sunny Icon" id="weather-icon2">
+        <img  [src]="iconArray.cloudy" alt="Cloudy Icon" id="weather-icon2">
+        <img  [src]="iconArray.rainny" alt="Rainy Icon" id="weather-icon2">
+        <img  [src]="iconArray.Thunderstorm" alt="Thunderstorm Icon" id="weather-icon2">
+        <img  [src]="iconArray.foggy" alt="Foggy Icon" id="weather-icon2">
+    </div>
 </div>
 
 <ng-template #elsee>

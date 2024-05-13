@@ -100,5 +100,29 @@
             "temperature":4,
             "condition":"foggy"
         }
+    },
+    {
+        "id": "12",
+        "name": "GAZIPUR",
+        "weatherinfo": {
+            "temperature": 25,
+            "condition": "sunny"
+        }
+    },
+    {
+        "id": "13",
+        "name": "CUMILLA",
+        "weatherinfo": {
+            "temperature": 20,
+            "condition": "cloudy"
+        }
+    },
+    {
+        "id": "14",
+        "name": "JESSORE",
+        "weatherinfo": {
+            "temperature": 16,
+            "condition": "rainny"
+        }
     }
 ]

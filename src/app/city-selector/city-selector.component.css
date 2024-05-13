@@ -2,13 +2,29 @@
     
     background-color: #5AC1D0;
     color: rgb(255, 255, 255);
-    padding: 20px 40px;
+    padding: 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
 }
+
+.dropdown-menu.dropdown-scroll {
+    max-height: 500px; 
+    overflow-y: auto;
+  }
+
+  .dropdownSearchList {
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1;
+  }
+
+  .dropdown-menu.dropdown-scroll::-webkit-scrollbar {
+    width: 0; 
+  }
 
 .card-header h2 {
     font-weight: bolder;
@@ -27,6 +43,8 @@
     font-size: 20px;
     /* text-decoration: none; */
 }
+
+
 .btnn:hover{
     transform: scale(2);
     
@@ -81,5 +99,7 @@ input{
     color: black;
     border: 1px solid #5AC1D0;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 5px;
+   
+    
 }

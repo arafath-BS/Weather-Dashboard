@@ -10,12 +10,12 @@
       <a (click)="get()" class="btnn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select City <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <ul class="dropdown-menu dropdown-scroll" aria-labelledby="dropdownMenuButton">
         <li class="dropdownSearchList"><input type="text" placeholder="Search City here" #searchData [(ngModel)]="searchQuery" (input)="filterCities()"></li>
         <br>
 
         
-            <li *ngIf="filteredCities.length==0 ; else filter"><a class="dropdown-item" href="#" *ngFor="let ct of cityss" (click)="selectedWeather(ct)">{{ct.name}}</a></li>
+            <li *ngIf="(filteredCities.length==0) && flag ; else filter"><a class="dropdown-item" href="#" *ngFor="let ct of cityss" (click)="selectedWeather(ct)">{{ct.name}}</a></li>
         
 
         <ng-template #filter>
