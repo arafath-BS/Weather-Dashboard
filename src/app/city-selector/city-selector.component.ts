@@ -1,75 +1,46 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { WeatherService } from '../weather.service';
+import { Component, OnInit } from '@angular/core';
 import { CityInfo } from '../city.model';
+import { WeatherService } from '../weather.service';
+
 
 @Component({
   selector: 'app-city-selector',
   templateUrl: './city-selector.component.html',
-  styleUrl: './city-selector.component.css'
+  styleUrl: './city-selector.component.css',
 })
-export class CitySelectorComponent implements OnInit{
-
-  flag=true;
-  searchQuery:string ='';
-
+export class CitySelectorComponent implements OnInit {
+  flag:boolean= true;
+  searchQuery: string = '';
   filteredCities = [];
-  
-  cityss=[];
+  cities:CityInfo[] = [];
+  name :string= '';
+  isOpen = false;
 
-  isOpen=false;
-  constructor(private weatherService:WeatherService)
-  {
-    
-    
+  constructor(private weatherService: WeatherService) {}
+  ngOnInit() {
+    this.weatherService.fetchData().subscribe({
+      next: (res) => {
+        this.cities = res;
+        console.log(res);
+      },
+    });
   }
 
-
-  ngOnInit()
-  {
-    
-
-   this.weatherService.fetchData().subscribe({
-    next:(res)=>{
-      this.cityss=res;
-      console.log(res);
-    }
-   })
+  get() {
+    this.isOpen = !this.isOpen;
   }
 
+ 
+  selectedWeather(city: CityInfo) {
+    this.name = city.name;
 
-  
-
-  get()
-  {
-    // this.cityss=this.weatherService.citys;
-    this.isOpen=!this.isOpen;
-    // console.log(this.cityss);
+    this.weatherService.Cites.emit(city);
   }
-
-
-
-   name='';
-  selectedWeather(ct:CityInfo)
-  {
-   this.name=ct.name;
-
-    this.weatherService.Citys.emit(ct);
-  }
-
-  
-
-
-  // for searching 
 
   filterCities() {
-
-    this.flag=false;
-    this.filteredCities = this.cityss.filter(city => city.name.toLowerCase().startsWith(this.searchQuery.toLowerCase()));
-  
-  
+    this.flag = false;
+    this.filteredCities = this.cities.filter((city) =>
+      city.name.toLowerCase().startsWith(this.searchQuery.toLowerCase())
+    );
   }
-  
-
-  
-
 }

@@ -4,46 +4,22 @@ import { Observable } from 'rxjs';
 import { CityInfo } from './city.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherService {
+  Cites = new EventEmitter<CityInfo>();
 
-   Citys=new EventEmitter<CityInfo>();
+  cites = [];
 
-  citys=[];
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchData(): Observable<any> {
     return this.http.get<CityInfo>('../assets/Data.json');
   }
 
- 
+  setCity(cities: CityInfo) {}
 
-   setCity(cities:CityInfo){
-
-    // const cityArray = Object.keys(cities).map(key => ({
-    //   id: key,
-    //   ...cities[key]
-    // }));
-
-    // this.citys= cityArray;
-
-  
-
-    //console.log(this.city);
+  getData() {
+    return this.cites;
   }
-
-
-
-  
-
-  getData()
-  {
-    return this.citys;
-  }
-
-  // sendData(ct:CityInfo){
-  //   this.Citys.emit(ct)
-  // }
 }

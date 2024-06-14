@@ -27,7 +27,7 @@ constructor(private weatherService:WeatherService){}
 
   ngOnInit(): void {
     
-     this.weatherService.Citys.subscribe(data =>{
+     this.weatherService.Cites.subscribe(data =>{
              this.rcvCity=data;
      });
   }

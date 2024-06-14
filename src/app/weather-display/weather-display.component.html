@@ -1,67 +1,101 @@
-<div class="card-body2" *ngIf="rcvCity==undefined ;else elsee">
-    <h1 class="ng-template" >Welcome To the weather app <br> Select a city to get the Weather update </h1>
-    <div class="fotter">
-        <img  [src]="iconArray.sunny" alt="Sunny Icon" id="weather-icon2">
-        <img  [src]="iconArray.cloudy" alt="Cloudy Icon" id="weather-icon2">
-        <img  [src]="iconArray.rainny" alt="Rainy Icon" id="weather-icon2">
-        <img  [src]="iconArray.Thunderstorm" alt="Thunderstorm Icon" id="weather-icon2">
-        <img  [src]="iconArray.foggy" alt="Foggy Icon" id="weather-icon2">
-    </div>
+<div class="card-body2" *ngIf="!rcvCity; else elsee">
+  <h1 class="ng-template">
+    Welcome To the weather app <br />
+    Select a city to get the Weather update
+  </h1>
+  <div class="fotter">
+    <img [src]="iconArray.sunny" alt="Sunny Icon" id="weather-icon2" />
+    <img [src]="iconArray.cloudy" alt="Cloudy Icon" id="weather-icon2" />
+    <img [src]="iconArray.rainny" alt="Rainy Icon" id="weather-icon2" />
+    <img
+      [src]="iconArray.Thunderstorm"
+      alt="Thunderstorm Icon"
+      id="weather-icon2"
+    />
+    <img [src]="iconArray.foggy" alt="Foggy Icon" id="weather-icon2" />
+  </div>
 </div>
 
 <ng-template #elsee>
+  <div
+    class="card-body"
+    [ngClass]="{
+      sunny:
+        rcvCity.weatherinfo.temperature > '25' &&
+        rcvCity.weatherinfo.temperature < '50',
+      cloudy:
+        rcvCity.weatherinfo.temperature >= '20' &&
+        rcvCity.weatherinfo.temperature < '25',
+      rainny:
+        rcvCity.weatherinfo.temperature >= '10' &&
+        rcvCity.weatherinfo.temperature < '20',
+      thunder:
+        rcvCity.weatherinfo.temperature >= '5' &&
+        rcvCity.weatherinfo.temperature < '10',
+      foggy:
+        rcvCity.weatherinfo.temperature >= '0' &&
+        rcvCity.weatherinfo.temperature < '5'
+    }"
+  >
+    <div class="notgettingData">
+      <div id="weather-data" *ngIf="rcvCity">
+        <div class="card-show">
+          <p class="degreec">{{ rcvCity.name }}</p>
 
-<div class="card-body" 
+          <p>
+            <span id="temperature">{{ rcvCity.weatherinfo.temperature }}</span
+            ><span id="degree">°C</span>
+          </p>
+          <p>
+            <span id="weather-condition">{{
+              rcvCity.weatherinfo.condition
+            }}</span>
+          </p>
 
-
-[ngClass]="{
-    'sunny': rcvCity.weatherinfo.temperature > '25' && rcvCity.weatherinfo.temperature < '50',
-    'cloudy': rcvCity.weatherinfo.temperature >= '20' && rcvCity.weatherinfo.temperature < '25',
-    'rainny': rcvCity.weatherinfo.temperature >= '10' && rcvCity.weatherinfo.temperature < '20',
-    'thunder': rcvCity.weatherinfo.temperature >= '5' && rcvCity.weatherinfo.temperature < '10',
-    'foggy': rcvCity.weatherinfo.temperature >= '0' && rcvCity.weatherinfo.temperature < '5'
-   
-}"
-
->
-
-<div class="notgettingData">
-
-
-
-    <div id="weather-data" *ngIf="rcvCity">
-
-    <div class="card-show">
-        
-        <p class="degreec">{{rcvCity.name}}</p>
-        
-
-        <p><span id="temperature">{{rcvCity.weatherinfo.temperature}}</span><span id="degree">°C</span></p>
-        <p><span id="weather-condition">{{rcvCity.weatherinfo.condition}}</span></p>
-
-    
-        <p> <span id="">{{date.getDate()}} : {{date.getUTCMonth()}} : {{date.getFullYear()}}</span></p>
-        <p> <span id="">{{date.getHours()}}:{{date.getMinutes()}}</span></p>
-        
-        
-    </div>
-   
-
-        <div [ngSwitch]="rcvCity.weatherinfo.condition">
-            <img *ngSwitchCase="'sunny'" [src]="iconArray.sunny" alt="Sunny Icon" id="weather-icon">
-            <img *ngSwitchCase="'cloudy'" [src]="iconArray.cloudy" alt="Cloudy Icon" id="weather-icon">
-            <img *ngSwitchCase="'rainny'" [src]="iconArray.rainny" alt="Rainy Icon" id="weather-icon">
-            <img *ngSwitchCase="'thunderstorm'" [src]="iconArray.Thunderstorm" alt="Thunderstorm Icon" id="weather-icon">
-            <img *ngSwitchCase="'foggy'" [src]="iconArray.foggy" alt="Foggy Icon" id="weather-icon">
+          <p>
+            <span id=""
+              >{{ date.getDate() }} : {{ date.getUTCMonth() }} :
+              {{ date.getFullYear() }}</span
+            >
+          </p>
+          <p>
+            <span id="">{{ date.getHours() }}:{{ date.getMinutes() }}</span>
+          </p>
         </div>
 
-    
-    
+        <div [ngSwitch]="rcvCity.weatherinfo.condition">
+          <img
+            *ngSwitchCase="'sunny'"
+            [src]="iconArray.sunny"
+            alt="Sunny Icon"
+            id="weather-icon"
+          />
+          <img
+            *ngSwitchCase="'cloudy'"
+            [src]="iconArray.cloudy"
+            alt="Cloudy Icon"
+            id="weather-icon"
+          />
+          <img
+            *ngSwitchCase="'rainny'"
+            [src]="iconArray.rainny"
+            alt="Rainy Icon"
+            id="weather-icon"
+          />
+          <img
+            *ngSwitchCase="'thunderstorm'"
+            [src]="iconArray.Thunderstorm"
+            alt="Thunderstorm Icon"
+            id="weather-icon"
+          />
+          <img
+            *ngSwitchCase="'foggy'"
+            [src]="iconArray.foggy"
+            alt="Foggy Icon"
+            id="weather-icon"
+          />
+        </div>
+      </div>
     </div>
-
-    <!-- <ng-template #welcome><h1 class="ng-template">Welcome To the weather app <br> Select a city to get the Weather update </h1></ng-template> -->
-</div>
-
-</div>
-
+  </div>
 </ng-template>

@@ -6,7 +6,7 @@ import { CityInfo } from './city.model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers:[WeatherService]
+  providers: [WeatherService],
 })
 export class AppComponent {
   cities!: CityInfo;
@@ -14,12 +14,10 @@ export class AppComponent {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
-    this.weatherService.fetchData().subscribe(data => {
+    this.weatherService.fetchData().subscribe((data) => {
       this.cities = data;
 
       this.weatherService.setCity(data);
-
-      //console.log(this.cities);
     });
   }
 }
